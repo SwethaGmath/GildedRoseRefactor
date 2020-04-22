@@ -4,14 +4,14 @@ using System.Collections.Generic;
 namespace csharp
 {
     [TestFixture]
-    public class GildedRoseTest
+    public class StandardItems
     {
         [Test]
         public void foo()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "foo", SellIn = 0, Quality = 0 } };
             GildedRose app = new GildedRose(Items);
-            app.UpdateItem();
+            app.UpdateItems();
             //Assert.AreEqual("foo", Items[0].Name);
             Assert.That(Items[0].Name, Is.EqualTo("foo"));
         }
@@ -28,7 +28,7 @@ namespace csharp
         public void decrement_quality()
         {
             Item item = new Item { Name = "standard item", SellIn = 1, Quality = 10 }.updateQuality();
-                Assert.AreEqual(9, item.Quality);
+            Assert.AreEqual(9, item.Quality);
         }
 
         [Test]
@@ -49,10 +49,10 @@ namespace csharp
             Assert.AreEqual(0, item.Quality);
 
         }
-        
+
     }
     [TestFixture]
-    public class legendaryItems
+    public class LegendaryItems
     {
         [Test]
         public void it_should_not_decrease_quality()
@@ -131,19 +131,19 @@ namespace csharp
             Assert.That(item.Quality, Is.EqualTo(8));
         }
     }
-   
-        
-    public static class Helper
-        {
-            public static Item updateQuality(this Item item)
-            {
-                IList<Item> items = new List<Item> { item };
-                GildedRose app = new GildedRose(items);
-                app.UpdateItem();
-                return item;
 
-            }
+
+    public static class Helper
+    {
+        public static Item updateQuality(this Item item)
+        {
+            IList<Item> items = new List<Item> { item };
+            GildedRose app = new GildedRose(items);
+            app.UpdateItems();
+            return item;
+
         }
+    }
 
 }
 

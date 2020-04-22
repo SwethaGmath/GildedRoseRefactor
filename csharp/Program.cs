@@ -6,10 +6,11 @@ namespace csharp
 {
     public class Program
     {
-        private static Logger logger = LogManager.GetCurrentClassLogger();
+        //private static Logger logger = LogManager.GetCurrentClassLogger();
+       
         public static void Main(string[] args)
         {
-            logger.Info("Main program started!");
+            //logger.Info("Main program started!");
             Console.WriteLine("OMGHAI!");
 
             IList<Item> Items = new List<Item>{
@@ -42,7 +43,7 @@ namespace csharp
 
             
             var app = new GildedRose(Items);
-            logger.Info("GildedRose instance created with {0} items", Items);
+            
 
             for (var i = 0; i < 31; i++)
             {
@@ -53,7 +54,7 @@ namespace csharp
                     System.Console.WriteLine(Items[j]);
                 }
                 Console.WriteLine("");
-                app.UpdateItem();
+                app.UpdateItems();
             }
         }
     }
