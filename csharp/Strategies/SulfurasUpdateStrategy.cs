@@ -1,6 +1,6 @@
 ﻿namespace csharp
 {
-    internal class SulfurasUpdateStrategy : IUpdateStrategy
+    class SulfurasUpdateStrategy : IUpdateStrategy
     {
         public void Update(Item item)
         {

@@ -69,33 +69,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgedBrieUpdateStrategy.cs" />
+    <Compile Include="Strategies\AgedBrieUpdateStrategy.cs" />
     <Compile Include="ApprovalTest.cs" />
-    <Compile Include="BackstagePassesUpdateStrategy.cs" />
-    <Compile Include="ConjuredUpdateStrategy.cs" />
+    <Compile Include="Strategies\BackstagePassesUpdateStrategy.cs" />
+    <Compile Include="Strategies\ConjuredUpdateStrategy.cs" />
     <Compile Include="GildedRose.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="IUpdateStrategy.cs" />
+    <Compile Include="Entities\Item.cs" />
+    <Compile Include="Interface\IUpdateStrategy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StandardUpdateStrategy.cs" />
-    <Compile Include="SulfurasUpdateStrategy.cs" />
-    <Compile Include="UpdateStrategyFactory.cs" />
+    <Compile Include="Strategies\StandardUpdateStrategy.cs" />
+    <Compile Include="Strategies\SulfurasUpdateStrategy.cs" />
+    <Compile Include="Factory\UpdateStrategyFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="NLog.xsd">
-      <SubType>Designer</SubType>
+    <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

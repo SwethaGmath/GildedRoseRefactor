@@ -55,6 +55,7 @@ namespace csharp
                 }
                 Console.WriteLine("");
                 app.UpdateItems();
+                Console.ReadKey();
             }
         }
     }
